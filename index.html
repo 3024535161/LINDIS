@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Cumpleaños Heidy 💖</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #ffe4e6, #fff7ae);
+      margin: 0;
+      padding: 70px 20px 20px; /* Espacio para el header fijo */
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff69b4;
+      margin-top: 20px;
+    }
+    h2 {
+      font-size: 2em;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    /* Contenedor fijo para el reproductor de audio */
+    #audioHeader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 105, 180, 0.9);
+      padding: 5px;
+      text-align: center;
+      z-index: 1000;
+    }
+    /* Sección y galería */
+    .section {
+      margin-top: 40px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      width: 300px;
+      height: 400px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .card.flipped .inner {
+      transform: rotateY(180deg);
+    }
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .front img, .back img, .front video, .back video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .back {
+      background-color: #fff2f2;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centrado vertical */
+      align-items: center;     /* Centrado horizontal */
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .back p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .video-text {
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    /* Para las tarjetas de video: forzamos que el video ocupe el 75% de la altura de la tarjeta */
+    .back video {
+      width: 100%;
+      height: 75%;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reproductor de audio fijo en la parte superior -->
+  <div id="audioHeader">
+    <audio id="cancion" src="audio/Feliz cumple Li.mp3" controls autoplay loop></audio>
+  </div>
+
+  <h1>¡Feliz cumpleaños, Lindis! 🎉</h1>
+  <p>Dale clic a cada tarjeta para ver el mensaje especial 💌</p>
+
+  <!-- Sección de Fotos -->
+  <div class="section">
+    <h2>Fotos</h2>
+    <div class="gallery">
+      <!-- 12 Fotos -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 1.jpg" alt="Foto 1">
+          </div>
+          <div class="back">
+            <p>Aunque llores por todo, tus lágrimas solo demuestran lo bonito que es tu corazón y lo fuerte que eres por sentir tanto. 🌟</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 2.jpg" alt="Foto 2">
+          </div>
+          <div class="back">
+            <p>Coincidir contigo en esta vida ha sido un regalo, mi princesita sentimental. 💖</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 3.jpg" alt="Foto 3">
+          </div>
+          <div class="back">
+            <p>Jajaja, yo con la cara de: '¿Y esta ridícula qué le pasa?'</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 4.jpg" alt="Foto 4">
+          </div>
+          <div class="back">
+            <p>Eres única, como nadie más y te ves re bien cuando sonríes, así que deja de llorar, cabezona... 💕</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 5.jpg" alt="Foto 5">
+          </div>
+          <div class="back">
+            <p>En esta foto Joel está más allá que acá jajajaja, y tú pues... hermosa como siempre, mi chinita. ✨</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 6.jpg" alt="Foto 6">
+          </div>
+          <div class="back">
+            <p>Fue increíble conocerte en persona. Me alegra mucho que hayas decidido venir a Barranquilla.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 7.jpg" alt="Foto 7">
+          </div>
+          <div class="back">
+            <p>Eres una grandiosa persona, tu energía transforma para bien a quienes te rodean. No olvides que vales muchísimo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 8.jpg" alt="Foto 8">
+          </div>
+          <div class="back">
+            <p>Qué risa esa foto grupal, pero más risa yo bailando bachata. Gracias por la paciencia, mi amore. 😍</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 9.jpg" alt="Foto 9">
+          </div>
+          <div class="back">
+            <p>Algo gracioso de este día: Lampo, ¡Voy a comprar la gaseosa! Jajaja… ¡y pum! Volvió con patacón y todo, y la gente mirándolo como: ¿qué pasó aquí? Jajaja.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 10.jpg" alt="Foto 10">
+          </div>
+          <div class="back">
+            <p>Ya no podías comer más, pero no querías quedarte atrás, y al final, terminaste regalando parte del perro caliente. ✨</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 11.jpg" alt="Foto 11">
+          </div>
+          <div class="back">
+            <p>Jajajaja, me encantó ese beso en el cachete, mi niña. Eres un amor y sabes que te amo, ¡carajooooooo!</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="fotos/foto 12.jpg" alt="Foto 12">
+          </div>
+          <div class="back">
+            <p>Por último, fotito con el señor: Castigo, Castigo praaa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Videos -->
+  <div class="section">
+    <h2>Videos</h2>
+    <div class="gallery">
+      <!-- Video 1 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p01.png" alt="Video 1 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Ya sabes primero tu Lindis y luego Dante ✨</p>
+            </div>
+            <video controls>
+              <source src="videos/video 1.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 2 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p02.png" alt="Video 2 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Yo desatando mi diva interior. 💅✨</p>
+            </div>
+            <video controls>
+              <source src="videos/video 2.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 3 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p03.png" alt="Video 3 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>El caremonda de Barnie es cule de mentiroso 😠</p>
+            </div>
+            <video controls>
+              <source src="videos/video 3.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 4 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p04.png" alt="Video 4 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Yo: hoy sí voy a limpiar serio. Yo a los 5 minutos: 🕺</p>
+            </div>
+            <video controls>
+              <source src="videos/video 4.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 5 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p05.png" alt="Video 5 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>El video que tanto querías, jajaja. Mira ese twerk que hice casi al final.</p>
+            </div>
+            <video controls>
+              <source src="videos/video sustituto.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 6 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p06.png" alt="Video 6 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Cuando el "negro de las donde están las rubias" que llevo dentro se apodera de mí. 🕺</p>
+            </div>
+            <video controls>
+              <source src="videos/video 6.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 7 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p07.png" alt="Video 7 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Mi mamá: Si no bailan, no hay comida. Yo sacando los pasos prohibidos. ✨</p>
+            </div>
+            <video controls>
+              <source src="videos/video 7.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 8 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p08.png" alt="Video 8 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Mi ex: Seguro está triste porque lo dejé.
+                Yo: 🕺</p>
+            </div>
+            <video controls>
+              <source src="videos/video 8.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Video 9 -->
+      <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="inner">
+          <div class="front">
+            <img src="portada/p09.png" alt="Video 9 portada">
+          </div>
+          <div class="back">
+            <div class="video-text">
+              <p>Te quiero muchisimooooo preciosa</p>
+            </div>
+            <video controls>
+              <source src="videos/video 9.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
